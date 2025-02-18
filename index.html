@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по машинному обучению</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тест по машинному обучению</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>Вопрос 1: Какое решающее правило при разработке алгоритма распознавании образов следует реализовать при задании функций правдоподобия классов и априорных вероятностей гипотез?</p>
+            <input type="radio" name="q1" value="max_likelihood"> решающее правило в соответствии с критерием максимума функции правдоподобия<br>
+            <input type="radio" name="q1" value="max_posterior"> решающее правило в соответствии с критерием максимума апостериорной вероятности<br>
+            <input type="radio" name="q1" value="min_risk"> решающее правило в соответствии с критерием минимума среднего риска<br>
+            <input type="radio" name="q1" value="decision_trees"> решающее правило на основе деревьев решений<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 2: Композиционные алгоритмы на основе бустинга основаны на следующих принципе взаимодействия элементарных алгоритмов (экспертов):</p>
+            <input type="radio" name="q2" value="aggregation"> общее решение принимается на основе агрегирования мнений всех экспертов<br>
+            <input type="radio" name="q2" value="iterative"> итерационный процесс построения композиций классификаторов, в котором каждая следующая композиция учится исправлять ранее допущенные ошибки<br>
+            <input type="radio" name="q2" value="learn_from_mistakes"> эксперты учатся на ошибках друг друга<br>
+            <input type="radio" name="q2" value="reduce_dependency"> снижение зависимости «экспертов» - базовых классификаторов ансамбля друг от друга<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 3: Как рассчитываются веса базовых алгоритмов на каждой итерации стандартного алгоритма AdaBoost?</p>
+            <input type="radio" name="q3" value="recalculate_old"> на основе пересчета старых весовых коэффициентов с использованием весовых коэффициентов примеров из обучающей выборки<br>
+            <input type="radio" name="q3" value="calculate_examples"> на основе расчета весовых коэффициентов примеров из обучающей выборки<br>
+            <input type="radio" name="q3" value="calculate_errors"> на основе расчета весовых коэффициентов обучающих примеров с учетом допущенных на них ошибок<br>
+            <input type="radio" name="q3" value="recalculate_with_error"> на основе пересчета старых весовых коэффициентов с использованием взвешенной ошибки классификации<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 4: Назовите основной принцип алгоритма кросс-валидации:</p>
+            <input type="radio" name="q4" value="exclude_train"> в цикле исключение одного или нескольких примеров из обучающей выборки и проведения контрольного тестирования<br>
+            <input type="radio" name="q4" value="out_of_bag"> использование режима out-of-bag<br>
+            <input type="radio" name="q4" value="exclude_test"> в цикле исключение одного или нескольких примеров из тестирующей выборки и проведения контрольного тестирования алгоритма с накоплением результатов классификации<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 5: Выберите общий сценарий решения задачи кластерного анализа и при неизвестном количестве классов:</p>
+            <input type="radio" name="q5" value="em_algorithm"> реализация ЕМ-алгоритма с перебором числа кластеров<br>
+            <input type="radio" name="q5" value="combine_split"> в цикле по неизвестному числу классов перебор всех возможных комбинаций кластеров с их объединением и разделением<br>
+            <input type="radio" name="q5" value="cluster_criteria"> выполнение кластеризаций с перебором числа кластеров и использование специальных критериев для определения числа кластеров<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 6: Что такое машинное обучение?</p>
+            <input type="radio" name="q6" value="pattern_recognition"> выявление общих закономерностей по частным эмпирическим (экспериментальным) данным<br>
+            <input type="radio" name="q6" value="ai_synonym"> синоним понятия «искусственный интеллект»<br>
+            <input type="radio" name="q6" value="expert_systems"> формализация знаний экспертов и их перенос в компьютер в виде базы знаний (область экспертных систем)<br>
+            <input type="radio" name="q6" value="improvement_algorithms"> совокупность методов построения алгоритмов, способных улучшать свое поведение в процессе накопления информации<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 7: Какой из алгоритмов не относится к классу композиционных?</p>
+            <input type="radio" name="q7" value="adaboost_rf"> алгоритм AdaBoost, случайный лес<br>
+            <input type="radio" name="q7" value="bagging"> алгоритмы на основе бэггинга<br>
+            <input type="radio" name="q7" value="boosting"> алгоритмы на основе бустинга<br>
+            <input type="radio" name="q7" value="knn_kmeans"> алгоритмы K-соседей, алгоритм K-means<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 8: Как изменяется внутриклассовая дисперсия при выполнении алгоритма K-средних?</p>
+            <input type="radio" name="q8" value="increase"> монотонно возрастает<br>
+            <input type="radio" name="q8" value="not_increase"> по крайней мере, не увеличивается после выполнения каждой итерации<br>
+            <input type="radio" name="q8" value="decrease"> стремится к нулю<br>
+            <input type="radio" name="q8" value="significant_decrease"> значительно уменьшается после выполнения каждой итерации<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 9: Что является критерием останова при выполнении алгоритма K-средних?</p>
+            <input type="radio" name="q9" value="iterations_greater"> после выполнения заданного числа итераций изменения центров кластеров больше заданной величины<br>
+            <input type="radio" name="q9" value="iterations_less"> после выполнения заданного числа итераций изменения центров кластеров меньше заданной величины<br>
+            <input type="radio" name="q9" value="equal_change"> после очередной итерации изменения центров кластеров равны заданной величине<br>
+            <input type="radio" name="q9" value="less_change"> после очередной итерации изменения центров кластеров меньше заданной величины<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 10: Какой критерий из перечисленных Вы отнесете к критериям оценки числа классов в задачах кластерного анализа?</p>
+            <input type="radio" name="q10" value="min_conditional_risk"> минимума условного риска<br>
+            <input type="radio" name="q10" value="silhouette"> критерий силуэта<br>
+            <input type="radio" name="q10" value="min_intra_spread"> критерий минимума внутриклассового разброса<br>
+            <input type="radio" name="q10" value="min_intra_dispersion"> критерий минимума внутриклассовой дисперсии<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 11: Какой алгоритм используется при выборе эталонных образов при решении задачи классификации по мере близости?</p>
+            <input type="radio" name="q11" value="knn"> алгоритм K-соседей<br>
+            <input type="radio" name="q11" value="kalinski_harabasz"> алгоритм Калинского-Харабаша<br>
+            <input type="radio" name="q11" value="stolp"> алгоритм STOLP<br>
+            <input type="radio" name="q11" value="svm"> алгоритм SVM<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 12: Основное предположение при синтезе наивного байесовского классификатора состоит в следующем:</p>
+            <input type="radio" name="q12" value="bernoulli"> признаки распознавания подчиняются распределению Бернулли<br>
+            <input type="radio" name="q12" value="independent"> признаки распознавания статистически независимы<br>
+            <input type="radio" name="q12" value="uncorrelated"> признаки распознавания не коррелированны друг относительно друга<br>
+            <input type="radio" name="q12" value="diagonal_covariance"> матрицы ковариаций признаков распознавания диагональны<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 13: Где располагаются опорные векторы в алгоритме SVM?</p>
+            <input type="radio" name="q13" value="outside_boundaries"> вне границ разделяющей полосы<br>
+            <input type="radio" name="q13" value="near_boundaries"> близко к границам разделяющей полосы<br>
+            <input type="radio" name="q13" value="beyond_boundaries"> заступают за границы разделяющей полосы<br>
+            <input type="radio" name="q13" value="on_boundaries"> на границах разделяющей полосы<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 14: Какое решающее правило при разработке алгоритма распознавании образов следует реализовать при задании только функций правдоподобия классов?</p>
+            <input type="radio" name="q14" value="svm"> решающее правило на основе SVM<br>
+            <input type="radio" name="q14" value="max_posterior"> решающее правило в соответствии с критерием максимума апостериорной вероятности<br>
+            <input type="radio" name="q14" value="min_conditional_risk"> решающее правило в соответствии с критерием минимума условного риска<br>
+            <input type="radio" name="q14" value="max_likelihood"> решающее правило в соответствии с критерием максимума правдоподобия<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 15: Соотношение для функции правдоподобия на основе гауссовской модели данных при разработке алгоритма распознавания предполагает задание:</p>
+            <input type="radio" name="q15" value="features_covariance_mean"> количество используемых признаков, условную матрицу ковариаций, условное математическое ожидание<br>
+            <input type="radio" name="q15" value="features_covariance_mean_binary"> количество используемых признаков, условную матрицу ковариаций, условное математическое ожидание, вероятности бинарных значения признаков<br>
+            <input type="radio" name="q15" value="features_covariance_mean_prior"> количество используемых признаков, условную матрицу ковариаций, условное математическое ожидание, априорные вероятности гипотез<br>
+            <input type="radio" name="q15" value="features_unconditional_covariance_mean"> количество используемых признаков, безусловную матрицу ковариаций, безусловное математическое ожидание<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 16: Какие алгоритмы используются при наличии неизвестных параметров функций правдоподобия?</p>
+            <input type="radio" name="q16" value="parzen_windows"> на основе оценок с использованием окон Парзена<br>
+            <input type="radio" name="q16" value="substitution"> подстановочные алгоритмы<br>
+            <input type="radio" name="q16" value="max_posterior"> оптимальные алгоритмы по критерию максимума апостериорной вероятности<br>
+            <input type="radio" name="q16" value="max_likelihood"> оптимальные алгоритмы по критерию максимального правдоподобия<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 17: Какие параметры используются при формировании оценок плотности по методу k-соседей?</p>
+            <input type="radio" name="q17" value="training_sample_covariance"> обучающая выборка, рекомендуемое число соседей, выборочная матрица ковариаций<br>
+            <input type="radio" name="q17" value="training_sample_size_constants"> размер обучающей выборки, рекомендуемое число соседей, подбираемые константы<br>
+            <input type="radio" name="q17" value="radius_constants"> радиус расположения ближайших соседей, рекомендуемое число соседей, подбираемые константы<br>
+            <input type="radio" name="q17" value="training_sample_constants"> обучающая выборка, рекомендуемое число соседей, подбираемые константы<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 18: Какие данные используются при разработке алгоритмов распознавания по мере близости?</p>
+            <input type="radio" name="q18" value="metric_etalon_vectors"> используемая метрика, один или несколько эталонных векторов для каждого класса<br>
+            <input type="radio" name="q18" value="distance_etalon_vectors"> используемая функция расстояния, один или несколько эталонных векторов для каждого класса<br>
+            <input type="radio" name="q18" value="metric_single_etalon"> используемая метрика, эталонный вектор для каждого класса<br>
+            <input type="radio" name="q18" value="distance_multiple_etalon"> используемая функция расстояния, несколько эталонных векторов для каждого класса<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 19: Выберите типовой набор функций, которые могут использоваться в качестве ядер скалярного произведения при разработке алгоритмов обработки информации:</p>
+            <input type="radio" name="q19" value="rbf_window_tanh"> радиально-базисная функция, оконная функция, функция гиперболического тангенса<br>
+            <input type="radio" name="q19" value="rbf_polynomial_exp"> радиально-базисная функция, полиномиальная функция, показательная функция<br>
+            <input type="radio" name="q19" value="rbf_polynomial_tanh"> радиально-базисная функция, полиномиальная функция, функция гиперболического тангенса<br>
+            <input type="radio" name="q19" value="triangular_polynomial_tanh"> треугольная функция, полиномиальная функция, функция гиперболического тангенса<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 20: Что такое бутстрел подвыборка при реализации алгоритма «случайный лес»?</p>
+            <input type="radio" name="q20" value="same_size"> формируется из обучающей выборки для каждого элемента ансамбля путем случайной выборки с возвращением из исходной обучающей выборки, объем подвыборки тот же, что и в исходной<br>
+            <input type="radio" name="q20" value="63_percent"> формируется из обучающей выборки для каждого элемента ансамбля путем случайной выборки с возвращением из исходной обучающей выборки, объем подвыборки 63\% от исходной<br>
+            <input type="radio" name="q20" value="no_return"> формируется из обучающей выборки для каждого элемента ансамбля путем случайной выборки без возвращения из исходной обучающей выборки, объем подвыборки меньше, чем в исходной<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 21: Метод деревьев решений предполагает использование следующих основных гиперпараметров:</p>
+            <input type="radio" name="q21" value="contamination_stop_prune"> показатель загрязненности, критерии остановки расщепление деревьев, параметры усечения деревьев, количество вершин<br>
+            <input type="radio" name="q21" value="contamination_stop_prune_cut"> показатель загрязненности, критерии остановки расщепление деревьев, параметры усечения деревьев<br>
+            <input type="radio" name="q21" value="contamination_split_cut"> показатель загрязненности, критерии расщепление деревьев, правило усечения деревьев<br>
+            <input type="radio" name="q21" value="contamination_split_prune_cut"> показатель загрязненности, правило расщепление деревьев, параметры усечения деревьев<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 22: Какие инъекции случайности используется при построении алгоритма «случайный лес»?</p>
+            <input type="radio" name="q22" value="random_trees_features"> случайное количество деревьев, случайный набор признаков, случайный размер дерева при формировании ансамбля<br>
+            <input type="radio" name="q22" value="random_subsample_branching"> случайная подвыборка и случайное ветвление при формировании каждого дерева решений в ансамбле<br>
+            <input type="radio" name="q22" value="random_subsample_features"> случайная подвыборка и случайный набор признаков при формировании каждого дерева решений в ансамбле<br>
+            <input type="radio" name="q22" value="random_subsample_features_size"> случайная подвыборка, случайный набор признаков, случайный размер дерева при формировании каждого дерева решений в ансамбле<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 23: Какие алгоритмы используются при наличии неизвестных функций правдоподобия?</p>
+            <input type="radio" name="q23" value="max_likelihood"> оптимальные алгоритмы по критерию максимального правдоподобия<br>
+            <input type="radio" name="q23" value="parzen_windows"> на основе оценок с использованием окон Парзена<br>
+            <input type="radio" name="q23" value="substitution"> подстановочные алгоритмы<br>
+            <input type="radio" name="q23" value="max_posterior"> оптимальные алгоритмы по критерию максимума апостериорной вероятности<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 24: Как пересчитываются веса примеров из обучающей выборки на каждой итерации стандартного алгоритма AdaBoost?</p>
+            <input type="radio" name="q24" value="calculate_examples"> на основе расчета весовых коэффициентов примеров из обучающей выборки<br>
+            <input type="radio" name="q24" value="recalculate_base_weights"> на основе пересчета старых весовых коэффициентов с использованием весовых коэффициентов базовых классификаторов<br>
+            <input type="radio" name="q24" value="recalculate_with_error"> на основе пересчета с использованием взвешенной ошибки классификации<br>
+            <input type="radio" name="q24" value="after_base_weights"> после пересчета весов базовых алгоритмов с учетом допущенных на этих примерах ошибок<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 25: Выберите известные Вам алгоритмы, относящиеся к классу композиционных:</p>
+            <input type="radio" name="q25" value="rf_svm"> Случайный лес, алгоритм SVM<br>
+            <input type="radio" name="q25" value="rf_adaboost"> Случайный лес, алгоритм AdaBoost<br>
+            <input type="radio" name="q25" value="rf_knn_kmeans"> Случайный лес, алгоритм K-соседей, алгоритм K-средних<br>
+            <input type="radio" name="q25" value="rf_knn"> Случайный лес, алгоритм K-соседей<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 26: Какие исходные данные используются при построении алгоритма по методу SVM в общем случае?</p>
+            <input type="radio" name="q26" value="feature_vector_kernel"> длина вектора признаков, тип функции ядра, параметры функции ядра, регуляризирующая константа C<br>
+            <input type="radio" name="q26" value="training_kernel_params"> обучающая выборка, тип функции ядра, параметры функции ядра, регуляризирующая константа C<br>
+            <input type="radio" name="q26" value="training_feature_vector_kernel"> обучающая выборка, длина вектора признаков, тип функции ядра, регуляризирующая константа C<br>
+            <input type="radio" name="q26" value="training_test_kernel_params"> обучающая и тестирующая выборка, вектор признаков, параметры функции ядра, регуляризирующая константа C<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 27: Имеется смешанная обучающая выборка двух классов, состоящая из N примеров. Какова должна быть максимальная размерность спрямляющего пространства?</p>
+            <input type="radio" name="q27" value="N_div_2"> N / 2<br>
+            <input type="radio" name="q27" value="4"> 4<br>
+            <input type="radio" name="q27" value="N_plus_1"> N + 1<br>
+            <input type="radio" name="q27" value="N"> N<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 28: Выберите правильное определение понятия kernel trick в задачах разработки алгоритмов обработки информации:</p>
+            <input type="radio" name="q28" value="kernel_transformation"> использование ядра скалярного произведения для перехода в спрямляющее пространство без непосредственного построения нелинейного преобразования<br>
+            <input type="radio" name="q28" value="nonlinear_transformation"> использование ядра скалярного произведения для построения нелинейного спрямляющего преобразования<br>
+            <input type="radio" name="q28" value="linear_transformation"> использование ядра скалярного произведения для построения линейного спрямляющего преобразования<br>
+            <input type="radio" name="q28" value="svm_algorithm"> использование ядра скалярного произведения для построения алгоритма по методу опорных векторов<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 29: В каких случаях возникает эффект недообучения в алгоритмах машинного обучения?</p>
+            <input type="radio" name="q29" value="imbalanced_data"> при существенной несбалансированности обучающих выборок<br>
+            <input type="radio" name="q29" value="small_data"> когда объем обучающих данных в десять раз меньше числа параметров алгоритма преобразования<br>
+            <input type="radio" name="q29" value="large_data"> когда объем обучающих данных больше, чем нужно для настройки требуемого числа параметров алгоритма<br>
+            <input type="radio" name="q29" value="large_training_few_params"> когда имеется большая обучающая выборка при малом числе настраиваемых параметров алгоритма<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 30: Как определить понятие «слабый классификатор» через вероятность ошибки (eps малая величина)?</p>
+            <input type="radio" name="q30" value="0.5_plus_eps"> Рош = 0.5 + eps<br>
+            <input type="radio" name="q30" value="eps"> Рош = eps<br>
+            <input type="radio" name="q30" value="greater_0.5"> Рош > 0.5<br>
+            <input type="radio" name="q30" value="0.5_minus_eps"> Рош = 0.5 - eps<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 31: Выберите пару алгоритмов обработки информации, в которой один однозначно больше подвержен эффекту переобучения:</p>
+            <input type="radio" name="q31" value="nn_rf"> Нейронная сеть или случайный лес<br>
+            <input type="radio" name="q31" value="adaboost_rf"> Adaboost или случайный лес<br>
+            <input type="radio" name="q31" value="decision_tree_rf"> Дерево решений или случайный лес<br>
+            <input type="radio" name="q31" value="svm_rf"> SVM или случайный лес<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 32: Почему при неизвестном числе классов в алгоритмах кластерного анализа нельзя пользоваться критерием минимума внутриклассового разброса?</p>
+            <input type="radio" name="q32" value="increase"> критерий монотонно возрастает при увеличении числа классов<br>
+            <input type="radio" name="q32" value="no_change"> критерий не изменяется при изменении числа классов<br>
+            <input type="radio" name="q32" value="independent"> критерий не зависим от числа классов<br>
+            <input type="radio" name="q32" value="decrease"> критерий монотонно убывает при увеличении числа классов<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 33: Какой результат при неизвестном числе классов в алгоритмах кластерного анализа дает использования критерием минимума внутриклассового разброса?</p>
+            <input type="radio" name="q33" value="single_cluster"> показывает наличие только одного кластера<br>
+            <input type="radio" name="q33" value="high_error"> дают большую ошибку при определении числа кластеров<br>
+            <input type="radio" name="q33" value="equal_elements"> показывает, что число кластеров равно числу элементов обучающей выборки<br>
+            <input type="radio" name="q33" value="no_change"> критерий не изменяется при изменении числа классов<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 34: Как принимается решение при распознавании образа по методу k-соседей?</p>
+            <input type="radio" name="q34" value="max_posterior"> в пользу класса, имеющего максимальное значение апостериорной вероятности k-соседей<br>
+            <input type="radio" name="q34" value="max_training_examples"> в пользу класса, для которого имеется максимальное число элементов обучающей выборки<br>
+            <input type="radio" name="q34" value="max_likelihood"> в пользу класса, имеющего максимальное значение функции правдоподобия k-соседей<br>
+            <input type="radio" name="q34" value="max_neighbors"> в пользу класса, для которого имеется максимальное число соседей<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 35: В чем главный принцип работы алгоритмов кластеризации при неизвестном количестве кластеров?</p>
+            <input type="radio" name="q35" value="cluster_criteria"> использование специальных критериев для определения числа кластеров<br>
+            <input type="radio" name="q35" value="em_algorithm"> реализация ЕМ-алгоритма с перебором числа кластеров<br>
+            <input type="radio" name="q35" value="combine_split"> перебор всех возможных комбинаций кластеров с их объединением и разделением<br>
+            <input type="radio" name="q35" value="cluster_criteria_combine"> выполнение кластеризаций с перебором числа кластеров и использование специальных критериев для определения числа кластеров<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 36: Какое решающее правило при разработке алгоритма классификации образов следует реализовать при задании функций правдоподобия классов, штрафных функций, априорных вероятностей гипотез?</p>
+            <input type="radio" name="q36" value="naive_bayes"> наивный байесовский классификатор<br>
+            <input type="radio" name="q36" value="max_posterior"> решающее правило в соответствии с критерием максимума апостериорной вероятности<br>
+            <input type="radio" name="q36" value="min_risk"> решающее правило в соответствии с критерием минимума среднего риска<br>
+            <input type="radio" name="q36" value="max_likelihood"> решающее правило в соответствии с критерием максимума функции правдоподобия<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 37: Наиболее полный набор данных для синтеза оптимальных алгоритмов классификации из перечисленных исходных включает:</p>
+            <input type="radio" name="q37" value="classes_priors_likelihoods_penalties"> число классов, априорные вероятностей гипотез, функции правдоподобия классов, штрафные функции<br>
+            <input type="radio" name="q37" value="classes_kernel_estimates"> число классов, ядерные оценки плотности распределения классов<br>
+            <input type="radio" name="q37" value="classes_priors_likelihoods_substitution"> число классов, априорные вероятностей гипотез, функции правдоподобия классов с подстановкой неизвестных параметров<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 38: Перечислите полный набор свойств оценок неизвестных параметров распределения:</p>
+            <input type="radio" name="q38" value="consistency_computability_unbiasedness_robustness"> состоятельность, вычисляемость, несмещенность, робастность<br>
+            <input type="radio" name="q38" value="consistency_efficiency_stability_robustness"> состоятельность, эффективность, устойчивость, робастность<br>
+            <input type="radio" name="q38" value="consistency_efficiency_unbiasedness_convergence"> состоятельность, эффективность, несмещенность, сходимость<br>
+            <input type="radio" name="q38" value="consistency_efficiency_unbiasedness_robustness"> состоятельность, эффективность, несмещенность, робастность<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 39: Какие параметры используются при формировании многомерных окон Парзена в оценках распределений?</p>
+            <input type="radio" name="q39" value="training_sample_window_constants"> обучающая выборка, параметр оконной функции, подбираемые константы<br>
+            <input type="radio" name="q39" value="radius_window_covariance_constants"> радиус расположения ближайших соседей, параметр оконной функции, выборочная матрица ковариаций, подбираемые константы<br>
+            <input type="radio" name="q39" value="sample_size_window_mean_constants"> размер обучающей выборки, оконная функция, выборочное математическое ожидание, подбираемые константы<br>
+            <input type="radio" name="q39" value="sample_size_window_type_covariance_constants"> размер обучающей выборки, вид оконной функции, параметр оконной функции, выборочная матрица ковариаций, подбираемые константы<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 40: В чем состоит принципиальное отличие детерминистского подхода к разработке алгоритмов обработки информации от статистического?</p>
+            <input type="radio" name="q40" value="no_probabilistic_models"> не используются вероятностные модели данных и показатели эффективности в виде вероятностей ошибок и моментов оцениваемых параметров<br>
+            <input type="radio" name="q40" value="relative_frequency"> в качестве показателей эффективности используются относительная частота ошибок и среднеквадратичное отклонение оценок параметров от истинного значения<br>
+            <input type="radio" name="q40" value="deterministic_models"> используются детерминистские модели данных и обучающие выборки<br>
+            <input type="radio" name="q40" value="no_probabilistic_models_training"> не используются вероятностные модели данных, алгоритмы основаны только на использовании обучающих выборок<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 41: Выберите наиболее корректную формулировку теоремы Мерсера:</p>
+            <input type="radio" name="q41" value="symmetric_positive_definite"> функция K(x, z) является ядром скалярного произведения тогда и только тогда, когда она симметрична K(x, z) = K(z, x) и положительно определена<br>
+            <input type="radio" name="q41" value="symmetric_nonnegative_definite"> функция K(x, z) является ядром скалярного произведения тогда и только тогда, когда она симметрична K(x, z) = K(z, x) и неотрицательно определена<br>
+            <input type="radio" name="q41" value="kernel_space"> спрямляющее пространство должны быть наделено скалярным произведением<br>
+            <input type="radio" name="q41" value="kernel_representation"> ядром скалярного произведения называется функцию, представимую в виде скалярного произведения в некотором пространстве после выполнения нелинейного преобразования K(x, z) = φ(x)^T φ(z)<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 42: Применение метода опорных векторов для нелинейно разделимых классов предполагает задание следующих исходных данных:</p>
+            <input type="radio" name="q42" value="labeled_kernel_C"> размеченная обучающая выборка, управляющий параметр C, нелинейное спрямляющее преобразование<br>
+            <input type="radio" name="q42" value="unlabeled_kernel"> неразмеченная обучающая выборка, функция ядра скалярного произведения<br>
+            <input type="radio" name="q42" value="labeled_kernel_C"> размеченная обучающая выборка, функция ядра скалярного произведения, управляющий параметр C<br>
+            <input type="radio" name="q42" value="unlabeled_C"> неразмеченная обучающая выборка, управляющий параметр C<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 43: Как определяется дерево решений?</p>
+            <input type="radio" name="q43" value="directed_connected_cycles"> ориентированный (заданы направления соединения вершин ребрами графа) связный граф с циклами и обратными связями и единственной корневой вершиной<br>
+            <input type="radio" name="q43" value="directed_connected_two_roots"> ориентированный связный граф без циклов (без обратных связей) с двумя корневыми вершинами<br>
+            <input type="radio" name="q43" value="undirected_connected"> неориентированный связный граф без циклов (без обратных связей) с единственной корневой вершиной<br>
+            <input type="radio" name="q43" value="directed_connected"> ориентированный связный граф без циклов (без обратных связей) с единственной корневой вершиной<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 44: Композиционные алгоритмы основаны на следующем общем принципе работы:</p>
+            <input type="radio" name="q44" value="reduce_dependency"> снижение зависимости «экспертов» - базовых классификаторов ансамбля друг от друга<br>
+            <input type="radio" name="q44" value="voting"> общее решение принимается на основе голосования всех экспертов<br>
+            <input type="radio" name="q44" value="learn_from_mistakes"> эксперты учатся на ошибках друг друга<br>
+            <input type="radio" name="q44" value="aggregation"> общее решение принимается на основе агрегирования мнений всех экспертов<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 45: Выберите наиболее корректную формулировку теоремы Ковера:</p>
+            <input type="radio" name="q45" value="nonlinear_increase_probability"> нелинейное преобразование сложной задачи классификации образов в пространство более высокой размерности повышает вероятность разделимости образов<br>
+            <input type="radio" name="q45" value="linear_increase_nonlinear_probability"> линейное преобразование сложной задачи классификации образов в пространство более высокой размерности повышает вероятность нелинейной разделимости образов<br>
+            <input type="radio" name="q45" value="nonlinear_increase_linear_probability"> нелинейное преобразование сложной задачи классификации образов в пространство более высокой размерности повышает вероятность линейной разделимости образов<br>
+            <input type="radio" name="q45" value="rbf_increase_probability"> использование преобразования на основе радиальной базисной функции повышает вероятность линейной разделимости образов<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 46: Как изменяется количество базовых алгоритмов на каждой итерации стандартного алгоритма AdaBoost?</p>
+            <input type="radio" name="q46" value="no_change"> не изменяется<br>
+            <input type="radio" name="q46" value="may_increase"> может увеличиваться<br>
+            <input type="radio" name="q46" value="increase_ten"> увеличивается на десять единиц<br>
+            <input type="radio" name="q46" value="random_change"> изменяется случайным образом<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 47: Какие алгоритмы относятся к алгоритмам кластерного анализа?</p>
+            <input type="radio" name="q47" value="kmeans_hierarchical_em_adaboost"> К-средних, иерархической группировки, ЕМ-алгоритм, AdaBoost<br>
+            <input type="radio" name="q47" value="knn_hierarchical_em"> К-соседей, иерархической группировки, ЕМ-алгоритм<br>
+            <input type="radio" name="q47" value="knn_hierarchical_rf"> К-соседей, иерархической группировки, случайный лес<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 48: Какие исходные данные входят в постановку задачи кластерного анализа в рамках детерминистского подхода?</p>
+            <input type="radio" name="q48" value="unlabeled_mixed_sample_classes_distance"> неразмеченная обучающая смешанная выборка, число классов (кластеров), мера близости образов различных классов<br>
+            <input type="radio" name="q48" value="unlabeled_mixed_sample_classes_distance_comparison"> неразмеченная обучающая смешанная выборка, число классов (кластеров), мера близости образов различных классов, способ сравнении классов<br>
+            <input type="radio" name="q48" value="labeled_mixed_sample_classes_distance"> размеченная обучающая смешанная выборка, число классов (кластеров), мера близости образов различных классов<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 49: Какие исходные данные входят в постановку задачи кластерного анализа в рамках на основе иерархической группировки?</p>
+            <input type="radio" name="q49" value="unlabeled_mixed_sample_classes_distance_comparison"> неразмеченная обучающая смешанная выборка, число классов (кластеров), мера близости образов различных классов, способ сравнении классов<br>
+            <input type="radio" name="q49" value="unlabeled_mixed_sample_classes_cluster_distance"> неразмеченная обучающая смешанная выборка, число классов (кластеров), мера близости различных кластеров<br>
+            <input type="radio" name="q49" value="labeled_mixed_sample_classes_distance"> размеченная обучающая смешанная выборка, число классов (кластеров), мера близости образов различных классов<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 50: В чем главный принцип работы алгоритма иерархической агломеративной кластеризации?</p>
+            <input type="radio" name="q50" value="split_clusters"> выполнение нескольких итераций с расщеплением всех больших кластеров на каждом шаге<br>
+            <input type="radio" name="q50" value="merge_clusters"> выполнение нескольких итераций с объединением всех наиболее «близких» кластеров на каждой итерации<br>
+            <input type="radio" name="q50" value="split_largest_cluster"> выполнение нескольких итераций с расщеплением наиболее крупного кластера на каждом шаге<br>
+            <input type="radio" name="q50" value="merge_two_closest_clusters"> выполнение нескольких итераций с объединением двух наиболее «близких» кластеров на каждой<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 51: Какой алгоритм не относится к алгоритмам кластерного анализа?</p>
+            <input type="radio" name="q51" value="knn"> алгоритм К-соседей<br>
+            <input type="radio" name="q51" value="kalinski_harabasz"> алгоритм Калинского-Харабаша<br>
+            <input type="radio" name="q51" value="em_algorithm"> ЕМ-алгоритм<br>
+            <input type="radio" name="q51" value="kmeans"> алгоритм K-means<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 52: Постановка задачи регрессии в рамках детерминистского подхода предполагает:</p>
+            <input type="radio" name="q52" value="labeled_least_squares_regression_type"> задание размеченной обучающей выборки, использование критерия наименьших квадратов, задание типа регрессии<br>
+            <input type="radio" name="q52" value="labeled_max_posterior_linear_equations"> задание размеченной обучающей выборки, использование критерия максимума апостериорной вероятности, решение системы линейных уравнений<br>
+            <input type="radio" name="q52" value="unlabeled_least_squares_regression_type"> задание неразмеченной обучающей выборки, использование критерия наименьших квадратов, задание типа регрессии<br>
+            <input type="radio" name="q52" value="labeled_least_squares_nonlinear_transformation"> задание размеченной обучающей выборки, использование критерия наименьших квадратов, выполнение нелинейного преобразования входных переменных, решение системы линейных уравнений<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 53: Решение задачи нелинейной регрессии предполагает:</p>
+            <input type="radio" name="q53" value="unlabeled_least_squares_nonlinear_transformation"> задание неразмеченной обучающей выборки, использование критерия наименьших квадратов, выполнение нелинейного преобразования входных переменных, решение СЛАУ для нахождения коэффициентов линейной регрессии новых переменных<br>
+            <input type="radio" name="q53" value="labeled_least_squares_nonlinear_transformation"> задание размеченной обучающей выборки, использование критерия наименьших квадратов, выполнение нелинейного преобразования входных переменных, решение СЛАУ для нахождения коэффициентов линейной регрессии новых переменных<br>
+            <input type="radio" name="q53" value="labeled_max_posterior_nonlinear_transformation"> задание размеченной обучающей выборки, использование критерия максимума апостериорной вероятности, выполнение нелинейного преобразования входных переменных, решение СЛАУ для нахождения коэффициентов линейной регрессии новых переменных<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 54: Решение задачи нелинейной регрессии предполагает:</p>
+            <input type="radio" name="q54" value="labeled_least_squares_nonlinear_transformation"> задание размеченной обучающей выборки, использование критерия наименьших квадратов, выполнение нелинейного преобразования входных переменных, решение СЛАУ для нахождения коэффициентов линейной регрессии новых переменных<br>
+            <input type="radio" name="q54" value="least_squares_nonlinear_transformation"> использование критерия наименьших квадратов, выполнение нелинейного преобразования входных переменных, решение СЛАУ для нахождения коэффициентов линейной регрессии новых переменных<br>
+            <input type="radio" name="q54" value="unlabeled_least_squares_nonlinear_transformation"> задание неразмеченной обучающей выборки, использование критерия наименьших квадратов, выполнение нелинейного преобразования входных переменных, решение СЛАУ для нахождения коэффициентов линейной регрессии новых переменных<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 55: Выберите правильный перечень известных Вам способы оценки вероятностей ошибок для статистических алгоритмов классификации:</p>
+            <input type="radio" name="q55" value="direct_conditional_max_posterior_simulation"> прямой расчет вероятностей ошибок на основе выражений для функций правдоподобия классов; использование условных распределений разделяющих функций, использование критерия максимума апостериорной вероятности, проведение компьютерного имитационного эксперимента<br>
+            <input type="radio" name="q55" value="direct_conditional_upper_simulation"> прямой расчет вероятностей ошибок на основе выражений для функций правдоподобия классов; использование условных распределений разделяющих функций, использование верхних границ вероятностей ошибок, проведение компьютерного имитационного эксперимента<br>
+            <input type="radio" name="q55" value="direct_penalty_upper_simulation"> прямой расчет вероятностей ошибок на основе выражений для функций правдоподобия классов; использование штрафных функций, использование верхних границ вероятностей ошибок, проведение компьютерного имитационного эксперимента<br>
+            <input type="radio" name="q55" value="direct_conditional_upper_simulation_features"> прямой расчет вероятностей ошибок на основе выражений для функций правдоподобия классов; использование условных распределений признаков классов, использование верхних границ вероятностей ошибок, проведение компьютерного имитационного эксперимента<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 56: Метод опорных векторов для линейно разделимых классов предполагает задание следующих исходных данных:</p>
+            <input type="radio" name="q56" value="labeled_kernel"> размеченная обучающая выборка, функция ядра скалярного произведения<br>
+            <input type="radio" name="q56" value="labeled_C_kernel"> размеченная обучающая выборка, управляющий параметр C, функция ядра скалярного произведения<br>
+            <input type="radio" name="q56" value="labeled_C"> размеченная обучающая выборка, управляющий параметр C<br>
+            <input type="radio" name="q56" value="unlabeled_C"> неразмеченная обучающая выборка, управляющий параметр C<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 57: Какие штрафные функции (функции потерь) используется при синтезе алгоритма классификации на основе критерия максимума апостериорной вероятности?</p>
+            <input type="radio" name="q57" value="asymmetric_zero_penalty"> несимметричные штрафные функций с нулевой платой за правильное решение и одинаковой платой за ошибки<br>
+            <input type="radio" name="q57" value="symmetric_fixed_zero_penalty"> симметричные штрафные функций с фиксированной нулевой платой за правильное решение и не одинаковой платой за ошибки<br>
+            <input type="radio" name="q57" value="symmetric_fixed_nonzero_penalty"> симметричные штрафные функций с фиксированной ненулевой платой за правильное решение и одинаковой платой за ошибки<br>
+            <input type="radio" name="q57" value="symmetric_zero_penalty"> симметричные штрафные функций с нулевой платой за правильное решение и одинаковой платой за ошибки<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 58: Как решается проблема линейной не разделимости данных в задачах разработки алгоритмов обработки информации?</p>
+            <input type="radio" name="q58" value="kernel_transformation"> использование ядра скалярного произведения для перехода в спрямляющее пространство без непосредственного построения нелинейного преобразования<br>
+            <input type="radio" name="q58" value="linear_transformation"> использование ядра скалярного произведения для построения линейного спрямляющего преобразования<br>
+            <input type="radio" name="q58" value="svm_algorithm"> использование ядра скалярного произведения для построения алгоритма по методу опорных векторов<br>
+            <input type="radio" name="q58" value="nonlinear_transformation"> использование ядра скалярного произведения для построения нелинейного спрямляющего преобразования<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 59: В каких случаях возникает эффект переобучения в алгоритмах машинного обучения:</p>
+            <input type="radio" name="q59" value="large_data"> когда объем обучающих данных в десять раз больше числа параметров<br>
+            <input type="radio" name="q59" value="small_data_params"> когда объем обучающих данных меньше, чем нужно для настройки требуемого числа параметров алгоритма<br>
+            <input type="radio" name="q59" value="imbalanced_data"> при существенной несбалансированности обучающих выборок<br>
+            <input type="radio" name="q59" value="large_data_params"> когда объем обучающих данных больше, чем число настраиваемых параметров алгоритма<br>
+        </div>
+
+        <div class="question">
+            <p>Вопрос 60: Композиционные алгоритмы на основе багтинга основаны на следующих принципе взаимодействия элементарных алгоритмов (экспертов):</p>
+            <input type="radio" name="q60" value="reduce_dependency"> снижение зависимости «экспертов» - базовых классификаторов ансамбля друг от друга<br>
+            <input type="radio" name="q60" value="learn_from_mistakes"> эксперты учатся на ошибках друг друга<br>
+            <input type="radio" name="q60" value="high_performance"> обеспечение высокого быстродействия при принятии решений экспертами<br>
+            <input type="radio" name="q60" value="voting"> общее решение принимается на основе голосования всех экспертов<br>
+        </div>
+
+        <button type="button" onclick="validateQuiz()">Проверить</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        function validateQuiz() {
+            const results = document.getElementById('results');
+            results.innerHTML = '';
+
+            const answers = {
+                q1: "max_posterior",
+                q2: "iterative",
+                q3: "recalculate_with_error",
+                q4: "exclude_train",
+                q5: "cluster_criteria",
+                q6: "improvement_algorithms",
+                q7: "knn_kmeans",
+                q8: "not_increase",
+                q9: "less_change",
+                q10: "silhouette",
+                q11: "knn",
+                q12: "independent",
+                q13: "on_boundaries",
+                q14: "max_likelihood",
+                q15: "features_covariance_mean",
+                q16: "substitution",
+                q17: "training_sample_constants",
+                q18: "distance_etalon_vectors",
+                q19: "rbf_polynomial_tanh",
+                q20: "same_size",
+                q21: "contamination_split_prune_cut",
+                q22: "random_subsample_features",
+                q23: "parzen_windows",
+                q24: "after_base_weights",
+                q25: "rf_adaboost",
+                q26: "training_kernel_params",
+                q27: "N_plus_1",
+                q28: "kernel_transformation",
+                q29: "large_training_few_params",
+                q30: "0.5_minus_eps",
+                q31: "decision_tree_rf",
+                q32: "decrease",
+                q33: "equal_elements",
+                q34: "max_neighbors",
+                q35: "cluster_criteria_combine",
+                q36: "min_risk",
+                q37: "classes_priors_likelihoods_penalties",
+                q38: "consistency_efficiency_unbiasedness_robustness",
+                q39: "sample_size_window_type_covariance_constants",
+                q40: "no_probabilistic_models",
+                q41: "symmetric_nonnegative_definite",
+                q42: "labeled_kernel_C",
+                q43: "directed_connected",
+                q44: "aggregation",
+                q45: "nonlinear_increase_linear_probability",
+                q46: "may_increase",
+                q47: "knn_hierarchical_em",
+                q48: "unlabeled_mixed_sample_classes_distance",
+                q49: "unlabeled_mixed_sample_classes_cluster_distance",
+                q50: "merge_two_closest_clusters",
+                q51: "knn",
+                q52: "labeled_least_squares_regression_type",
+                q53: "labeled_least_squares_nonlinear_transformation",
+                q54: "labeled_least_squares_nonlinear_transformation",
+                q55: "direct_conditional_upper_simulation",
+                q56: "labeled_C",
+                q57: "symmetric_zero_penalty",
+                q58: "kernel_transformation",
+                q59: "small_data_params",
+                q60: "reduce_dependency"
+            };
+
+            let score = 0;
+
+            for (const [question, correctAnswer] of Object.entries(answers)) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswer) {
+                    results.innerHTML += `<p class="correct">Вопрос ${question.slice(1)}: Верно</p>`;
+                    score++;
+                } else {
+                    results.innerHTML += `<p class="incorrect">Вопрос ${question.slice(1)}: Неверно</p>`;
+                }
+            }
+
+            results.innerHTML += `<p>Ваш счет: ${score} из ${Object.keys(answers).length}</p>`;
+        }
+    </script>
+</body>
+</html>
