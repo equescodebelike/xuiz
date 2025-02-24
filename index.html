@@ -632,45 +632,48 @@
             nextFlashQuestion();
         }
 
-        function nextFlashQuestion() {
-            if (flashIndex > questions.length) {
-                clearInterval(timerInterval);
-                document.getElementById('flashTestContainer').style.display = 'none';
-                showResults();
-                return;
-            }
-
-            flashIndex++; // Переходим к следующему вопросу
-
-            updateTaskNumber(); // Обновляем номер текущего задания
-
-            let q = questions[flashIndex];
-            document.getElementById('flashQuestion').textContent = q.questionText;
-            
-            // Перемешиваем варианты ответов случайным образом
-            let shuffledOptions = [...q.options];
-            shuffledOptions.sort(() => Math.random() - 0.5);
-            
-            let optionsHTML = '';
-            shuffledOptions.forEach(option => {
-                let checked = selectedAnswers[flashIndex] === option ? 'checked' : '';
-                optionsHTML += `<input type="radio" name="answer" value="${option}" ${checked}> ${option}<br>`;
-            });
-            document.getElementById('optionsList').innerHTML = optionsHTML;
-            document.getElementById('nextButton').disabled = true; // Деактивируем кнопку до выбора ответа
-            document.getElementById('correctAnswerText').innerHTML = ''; // Очищаем текст правильного ответа перед новым вопросом
-
-            // Делаем кнопку "Выбрать ответ" неактивной
-            document.getElementById('checkButton').disabled = true;
-
-            // Добавляем обработчик событий для радиокнопок
-            document.querySelectorAll('input[name="answer"]').forEach(input => {
-                input.addEventListener('change', function() {
-                    // Активируем кнопку "Выбрать ответ", как только пользователь выбрал ответ
-                    document.getElementById('checkButton').disabled = false;
-                });
-            });
+       function nextFlashQuestion() {
+        // Проверяем, что flashIndex не выходит за пределы массива
+        if (flashIndex >= questions.length) {
+            clearInterval(timerInterval);
+            document.getElementById('flashTestContainer').style.display = 'none';
+            showResults();
+            return;
         }
+
+        // Обновляем номер текущего задания
+        updateTaskNumber();
+
+        let q = questions[flashIndex];
+        document.getElementById('flashQuestion').textContent = q.questionText;
+
+        // Перемешиваем варианты ответов случайным образом
+        let shuffledOptions = [...q.options];
+        shuffledOptions.sort(() => Math.random() - 0.5);
+
+        let optionsHTML = '';
+        shuffledOptions.forEach(option => {
+            let checked = selectedAnswers[flashIndex] === option ? 'checked' : '';
+            optionsHTML += `<input type="radio" name="answer" value="${option}" ${checked}> ${option}<br>`;
+        });
+        document.getElementById('optionsList').innerHTML = optionsHTML;
+        document.getElementById('nextButton').disabled = true; // Деактивируем кнопку до выбора ответа
+        document.getElementById('correctAnswerText').innerHTML = ''; // Очищаем текст правильного ответа перед новым вопросом
+
+        // Делаем кнопку "Выбрать ответ" неактивной
+        document.getElementById('checkButton').disabled = true;
+
+        // Добавляем обработчик событий для радиокнопок
+        document.querySelectorAll('input[name="answer"]').forEach(input => {
+            input.addEventListener('change', function() {
+                // Активируем кнопку "Выбрать ответ", как только пользователь выбрал ответ
+                document.getElementById('checkButton').disabled = false;
+            });
+        });
+
+        // Увеличиваем индекс после отображения вопроса
+        flashIndex++;
+    }
 
 
         function updateTaskNumber() {
