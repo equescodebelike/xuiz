@@ -1,4 +1,5 @@
 # Основано на проекте [equescodebelike](https://github.com/equescodebelike/xuiz)
+### https://dellrain.github.io/xuiz/
 ![Untitled](https://github.com/user-attachments/assets/30ca1616-8b88-4b5d-b34b-0e6da14653af)
 ### · Полностью переработа система теста
 ### · Добавлена возможность переключаться по заданиям
@@ -10,5 +11,5 @@
 
 <br></br>
 # Похожие проекты:
-http://johann.sportgroup.cl/    
+### http://johann.sportgroup.cl/
 ![image](https://github.com/user-attachments/assets/4151d9ed-1c59-4822-b4ab-d9696bccc457)
