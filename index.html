@@ -620,7 +620,7 @@
             navContainer.innerHTML = '';
             questions.forEach((_, index) => {
                 let button = document.createElement('button');
-                button.textContent = index + 1;
+                button.textContent = index;
                 button.id = `navBtn${index}`;
                 button.onclick = () => goToQuestion(index);
                 navContainer.appendChild(button);
