@@ -620,7 +620,7 @@
             navContainer.innerHTML = '';
             questions.forEach((_, index) => {
                 let button = document.createElement('button');
-                button.textContent = index;
+                button.textContent = index + 1;
                 button.id = `navBtn${index}`;
                 button.onclick = () => goToQuestion(index);
                 navContainer.appendChild(button);
@@ -633,7 +633,7 @@
         }
 
         function nextFlashQuestion() {
-            if (flashIndex >= questions.length) {
+            if (flashIndex > questions.length) {
                 clearInterval(timerInterval);
                 document.getElementById('flashTestContainer').style.display = 'none';
                 showResults();
